@@ -1,0 +1,81 @@
+(function() {
+  const script = document.currentScript;
+  const attrTheme = script.getAttribute("data");
+  let theme = (attrTheme && attrTheme.trim().toLowerCase()) || "auto";
+
+  function detectTheme() {
+    const html = document.documentElement.innerHTML;
+    const isBootstrap = /class\s*=\s*["'][^"']*(btn|container|row|col|navbar|alert)[^"']*["']/.test(html);
+    const isTailwind = /class\s*=\s*["'][^"']*(flex|grid|bg-|text-|rounded|p-|m-)[^"']*["']/.test(html);
+
+    if (isBootstrap && !isTailwind) return "b";
+    if (isTailwind && !isBootstrap) return "t";
+    if (isBootstrap && isTailwind) return "b"; 
+    return "t"; 
+  }
+
+  if (theme === "auto") theme = detectTheme();
+
+  const cssMap = {
+    t: "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+    b: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  };
+
+  const jsMap = {
+    t: "",
+    b: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  };
+
+  // CSS utama
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = cssMap[theme];
+  document.head.appendChild(link);
+
+  // JS kalau perlu
+  if (jsMap[theme]) {
+    const js = document.createElement("script");
+    js.src = jsMap[theme];
+    document.head.appendChild(js);
+  }
+
+  // CSS custom
+  const customCSS = `
+    body {
+      font-family: Poppins, sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .yumeiro-card {
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      padding: 20px;
+      background: #fff;
+    }
+
+    #yumeiro-meter {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      z-index: 99999;
+      font-family: monospace;
+      user-select: none;
+    }
+  `;
+  const style = document.createElement("style");
+  style.innerHTML = customCSS;
+  document.head.appendChild(style);
+
+  // indikator (meteran)
+  const meter = document.createElement("div");
+  meter.id = "yumeiro-meter";
+  meter.innerText = `Yumeiro: ${theme}`;
+  document.body.appendChild(meter);
+
+  console.log(`Yumeiro CDN loaded with theme: ${theme}`);
+})();
