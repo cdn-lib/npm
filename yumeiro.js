@@ -26,45 +26,20 @@
     b: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
   };
 
-  // CSS utama
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.href = cssMap[theme];
   document.head.appendChild(link);
-
-  // JS kalau perlu
+  
   if (jsMap[theme]) {
     const js = document.createElement("script");
     js.src = jsMap[theme];
     document.head.appendChild(js);
   }
-
-  // CSS custom
   const customCSS = `
     body {
       font-family: Poppins, sans-serif;
       transition: all 0.3s ease;
-    }
-
-    .yumeiro-card {
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      padding: 20px;
-      background: #fff;
-    }
-
-    #yumeiro-meter {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 12px;
-      z-index: 99999;
-      font-family: monospace;
-      user-select: none;
     }
   `;
   const style = document.createElement("style");
