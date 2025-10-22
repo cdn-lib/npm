@@ -71,11 +71,6 @@
   style.innerHTML = customCSS;
   document.head.appendChild(style);
 
-  // indikator (meteran)
-  const meter = document.createElement("div");
-  meter.id = "yumeiro-meter";
-  meter.innerText = `Yumeiro: ${theme}`;
-  document.body.appendChild(meter);
 
-  console.log(`Yumeiro CDN loaded with theme: ${theme}`);
+
 })();
