@@ -107,7 +107,7 @@ GITHUB : https://github.com/cdn-lib/
     document.head.appendChild(js);
   }
   
-//   const customCSS = `
+   const customCSS = `
   
 // .navbar {
 //   border-bottom: 1px solid #eeeeee;
@@ -205,7 +205,7 @@ GITHUB : https://github.com/cdn-lib/
 // .collapse.show .slide-menu {
 //   transform: translateX(0);
 // }
-//   `;
+   `;
   const style = document.createElement("style");
   style.innerHTML = customCSS;
   document.head.appendChild(style);
@@ -381,8 +381,9 @@ GITHUB : https://github.com/cdn-lib/
 	};
 })();
 
+// window.fixit = { isDark: false };
 
 
 
 
-
+		
