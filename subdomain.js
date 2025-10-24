@@ -49,11 +49,11 @@ async function startScan() {
       domainInput.disabled = false;
       btnText.textContent = 'Mulai Scan';
       btnSpinner.classList.add('d-none');
-},
+}
 
-const globalStyles = document.createElement('style');
+const css = document.createElement('style');
 
-globalStyles.innerHTML = `
+css.innerHTML = `
   body {
       background-color: var(--bs-dark-bg-subtle);
     }
@@ -68,4 +68,5 @@ globalStyles.innerHTML = `
     }
 `;
 
-document.head.appendChild(globalStyles);
+
+document.querySelector("head").appendChild(css)
