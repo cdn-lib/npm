@@ -1,4 +1,4 @@
-[]=========[] LIST MENU []=========[]
+## []=========[] LIST MENU []=========[]
 
 •  font-awesome
 •  bootstrap
@@ -8,13 +8,13 @@
 
 NOTE !!!
 
-PASTE CODE DI BAWAH SEBELUM </body>
+## PASTE CODE DI BAWAH SEBELUM </body>
 code : 
 ```html 
 <ikan class="ikan"></ikan>
 ```
 
-PASTE CODE DI BAWAH SESUDAH </body>
+## PASTE CODE DI BAWAH SESUDAH </body>
 ```html
 <scrip> 
 window.fixit = { isDark: false };
@@ -22,7 +22,9 @@ window.fixit = { isDark: false };
 ```
 (TEMPEL CODE INI UNTUK MENAMPILKAN IKAN TERBANG) -_<
 
+## NOTE !!!!!
 
+```html
 JANGAN DI UBAH / DOWNLOAD SEMBARANGAN
 CODE INI SUDAH DI RANCANG AGAR TERHUBUNG KE SERVER KAMI, JADI TIDAK BISA DIUBAH ATAU DI MODIF SECARA PAKSA DAN SESUKA'HATI ANDA
 
@@ -37,3 +39,4 @@ GMAIL : kagurairyosuke@gmail.com
         yumeiroryosuke@svk.jp
         
 GITHUB : https://github.com/cdn-lib/
+```
