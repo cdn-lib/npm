@@ -72,7 +72,7 @@ async function startScan() {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0d0d0d;
+    background: #131313;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,8 +81,8 @@ async function startScan() {
   }
 
   .loading-screen.hide {
-    transform: translateX(-100%);
-    opacity: 0;
+    transform: translateX(100%);
+    opacity: 1;
   }
 
   .flipping {
