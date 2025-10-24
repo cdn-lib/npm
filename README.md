@@ -9,7 +9,10 @@
 NOTE !!!
 
 PASTE CODE DI BAWAH SEBELUM </body>
-code : ```html <ikan class="ikan"></ikan> ```
+code : 
+```html 
+<ikan class="ikan"></ikan>
+```
 
 PASTE CODE DI BAWAH SESUDAH </body>
 ```html
