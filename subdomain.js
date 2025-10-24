@@ -51,22 +51,3 @@ async function startScan() {
       btnSpinner.classList.add('d-none');
 }
 
-const css = document.createElement('style');
-
-css.innerHTML = `
-  body {
-      background-color: var(--bs-dark-bg-subtle);
-    }
-    #log {
-      max-height: 400px;
-      overflow-y: auto;
-      background-color: var(--bs-tertiary-bg);
-      border-radius: var(--bs-border-radius);
-      padding: 1rem;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-`;
-
-
-document.querySelector("head").appendChild(css)
