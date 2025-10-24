@@ -13,6 +13,9 @@ NOTE !!!
 
 PASTE CODE DI BAWAH SEBELUM </body>
 code : <footer class="footer"></footer> 
+<script> 
+window.fixit = { isDark: false };
+</script>
 
 (TEMPEL CODE INI UNTUK MENAMPILKAN IKAN TERBANG) -_<
 
@@ -26,6 +29,349 @@ RESIKO DI TANGGUNG SENDIRI
 
 */
 
-!function(){const t=document.currentScript.getAttribute("data");let e=t&&t.trim().toLowerCase()||"auto";"auto"===e&&(e=function(){const t=document.documentElement.innerHTML,e=/class\s*=\s*["'][^"']*(btn|container|row|col|navbar|alert)[^"']*["']/.test(t),i=/class\s*=\s*["'][^"']*(flex|grid|bg-|text-|rounded|p-|m-)[^"']*["']/.test(t);return e&&!i?"bootstrap":i&&!e?"tailwind":e&&i?"bootstrap":e&&!i?"b":i&&!e?"t":e&&i?"b":"tailwind"}());const i={tailwind:"",bootstrap:"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js",t:"",b:"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"},n=document.createElement("link");n.rel="stylesheet",n.href={tailwind:"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",bootstrap:"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",t:"https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",b:"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"}[e],document.head.appendChild(n);const s=document.createElement("link");s.rel="stylesheet",s.href="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css",document.head.appendChild(s);const h=document.createElement("script");h.src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js",document.head.appendChild(h);const r=document.createElement("link");r.rel="stylesheet",r.href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",document.head.appendChild(r);const o=document.createElement("link");if(o.rel="stylesheet",o.href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css",document.head.appendChild(n),i[e]){const t=document.createElement("script");t.src=i[e],document.head.appendChild(t)}const a=document.createElement("style");a.innerHTML='\n  body {\n      padding-top: 70px; /* tinggi navbar */\n    }\n    .navbar {\n  border-bottom: 1px solid #eeeeee;\n  \n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n}\n.navbar-brand {\n  font-weight: 700;\n  color: #fff !important;\n  text-transform: uppercase;\n  letter-spacing: 1px;\n}\n\n.nav-link {\n  color: white !important;\n  margin: 0 8px;\n  position: relative;\n  transition: all 0.3s ease;\n}\n\n.nav-link:hover {\n  color: rgba(0,173,181,1) !important;\n  transform: translateY(-2px);\n}\n\n.nav-link::after {\n  content: "";\n  position: absolute;\n  bottom: -4px;\n  left: 0;\n  width: 0%;\n  height: 2px;\n  background: rgba(0,173,181,1);\n  transition: width 0.3s ease;\n}\n\n.nav-link:hover::after {\n  width: 100%;\n}\n\n\n/* ===== CARD STYLE ===== */\n.card {\n  display: flex; \n  flex-direction: column; \n  width: 272px;\n  border-radius: 10px;\n  box-shadow: 2px 7px 13px 0px rgba(0,0,0,0.2);\n  overflow: hidden; \n  background: ; \n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n}\n\n.card:hover {\n  transform: translateY(-5px);\n  border-style: dashed;\n  box-shadow: 3px 10px 20px rgba(0,0,0,0.3);\n  border-color: rgba(0,173,181,1); \n}\n\n.card-body {\n  background-color: #222831;\n  flex-grow: 1;\n  padding: 24px; \n  color: #000;\n}\n\n.card-title {\n  color: #000000;\n  font-weight: bold;\n  font-size: 18px;\n  font-family: Arial, Helvetica, sans-serif; \n  margin: 0; \n  padding: 0; \n}\n\n.card-text {\n  line-height: 1.4;\n  margin-top: 10px; \n  font-size: 17px;\n  color: white;\n}\n.slide-menu {\n  position: fixed;\n  top: 56px;\n  left: 0;\n  width: 250px;\n  height: 100vh;\n  transform: translateX(-100%);\n  transition: transform 0.4s ease;\n  z-index: 1040;\n  border-right: 2px solid #eeeeee;\n}\n\n.collapse.show .slide-menu {\n  transform: translateX(0);\n}\n  ',document.head.appendChild(a)}(),(()=>{var t="rgb(255 255 255 / 10%)",e="rgba(0 173 181 )",i={POINT_INTERVAL:5,FISH_COUNT:3,MAX_INTERVAL_COUNT:50,INIT_HEIGHT_RATE:.5,THRESHOLD:20,init:function(){this.setParameters(),this.setStyle(),this.reconstructMethods(),this.setup(),this.bindEvent(),this.render()},setParameters:function(){this.window=window,this.container=document.createElement("div"),this.container.id="flyfish",this.canvas=document.createElement("canvas"),this.context=this.canvas.getContext("2d"),this.points=[],this.fishes=[],this.watchIds=[],document.querySelector(".footer").appendChild(this.container)},setStyle:function(){let t=document.createElement("style");t.innerHTML="\n    .footer {\n      position: flex;\n    }\n    #flyfish {\n      position: absolute;\n      width: 100%;\n      height: 230px;\n      overflow: hidden;\n      left: 0;\n      bottom: 0;\n      z-index: -1;\n      pointer-events: none;\n    }",document.querySelector("head").appendChild(t)},createSurfacePoints:function(){let t=Math.round(this.width/this.POINT_INTERVAL);this.pointInterval=this.width/(t-1),this.points.push(new n(this,0));for(let e=1;e<t;e++){let t=new n(this,e*this.pointInterval),i=this.points[e-1];t.setPreviousPoint(i),i.setNextPoint(t),this.points.push(t)}},reconstructMethods:function(){this.watchWindowSize=this.watchWindowSize.bind(this),this.jdugeToStopResize=this.jdugeToStopResize.bind(this),this.startEpicenter=this.startEpicenter.bind(this),this.moveEpicenter=this.moveEpicenter.bind(this),this.render=this.render.bind(this)},setup:function(){this.points.length=0,this.fishes.length=0,this.watchIds.length=0,this.intervalCount=this.MAX_INTERVAL_COUNT,this.containerWidth=this.container.offsetWidth,this.containerHeight=this.container.offsetHeight,this.width=this.containerWidth,this.height=this.containerHeight,this.fishCount=this.FISH_COUNT*this.width/500*this.height/500,this.canvas.width=this.width,this.canvas.height=this.height,this.reverse=!1,this.container.appendChild(this.canvas),this.fishes.push(new s(this)),this.createSurfacePoints()},watchWindowSize:function(){this.clearTimer(),this.tmpWidth=this.window.innerWidth,this.tmpHeight=this.window.innerHeight,this.watchIds.push(setTimeout(this.jdugeToStopResize,this.WATCH_INTERVAL))},clearTimer:function(){for(;this.watchIds.length>0;)clearTimeout(this.watchIds.pop())},jdugeToStopResize:function(){let t=this.window.innerWidth,e=this.window.innerHeight,i=t==this.tmpWidth&&e==this.tmpHeight;this.tmpWidth=t,this.tmpHeight=e,i&&this.setup()},bindEvent:function(){let t=this;this.window.addEventListener("resize",(function(){t.watchWindowSize()})),this.container.addEventListener("mouseenter",(function(e){t.startEpicenter(e)})),this.container.addEventListener("mousemove",(function(e){t.moveEpicenter(e)}))},getAxis:function(t){let e=this.container.getBoundingClientRect();return{x:t.clientX-e.left+this.window.scrollX,y:t.clientY-e.top+this.window.scrollY}},startEpicenter:function(t){this.axis=this.getAxis(t)},moveEpicenter:function(t){let e=this.getAxis(t);this.axis||(this.axis=e),this.generateEpicenter(e.x,e.y,e.y-this.axis.y),this.axis=e},generateEpicenter:function(t,e,i){if(e<this.height/2-this.THRESHOLD||e>this.height/2+this.THRESHOLD)return;let n=Math.round(t/this.pointInterval);n<0||n>=this.points.length||this.points[n].interfere(e,i)},controlStatus:function(){for(let t=0,e=this.points.length;t<e;t++)this.points[t].updateSelf();for(let t=0,e=this.points.length;t<e;t++)this.points[t].updateNeighbors();this.fishes.length<this.fishCount&&0==--this.intervalCount&&(this.intervalCount=this.MAX_INTERVAL_COUNT,this.fishes.push(new s(this)))},render:function(){let i=this;!function n(){i.controlStatus(),i.context.clearRect(0,0,i.width,i.height),fixit.isDark?i.context.fillStyle=t||"rgb(255 255 255 / 10%)":i.context.fillStyle=e||"rgb(0 119 190 / 10%)";for(let t=0,e=i.fishes.length;t<e;t++)i.fishes[t].render(i.context);i.context.save(),i.context.globalCompositeOperation="xor",i.context.beginPath(),i.context.moveTo(0,i.reverse?0:i.height);for(let t=0,e=i.points.length;t<e;t++)i.points[t].render(i.context);i.context.lineTo(i.width,i.reverse?0:i.height),i.context.closePath(),i.context.fill(),i.context.restore(),requestAnimationFrame(n)}()}};function n(t,e){this.renderer=t,this.x=e,this.init()}function s(t){this.renderer=t,this.init()}n.prototype={SPRING_CONSTANT:.03,SPRING_FRICTION:.9,WAVE_SPREAD:.3,ACCELARATION_RATE:.01,init:function(){this.initHeight=this.renderer.height*this.renderer.INIT_HEIGHT_RATE,this.height=this.initHeight,this.fy=0,this.force={previous:0,next:0}},setPreviousPoint:function(t){this.previous=t},setNextPoint:function(t){this.next=t},interfere:function(t,e){this.fy=this.renderer.height*this.ACCELARATION_RATE*(this.renderer.height-this.height-t>=0?-1:1)*Math.abs(e)},updateSelf:function(){this.fy+=this.SPRING_CONSTANT*(this.initHeight-this.height),this.fy*=this.SPRING_FRICTION,this.height+=this.fy},updateNeighbors:function(){this.previous&&(this.force.previous=this.WAVE_SPREAD*(this.height-this.previous.height)),this.next&&(this.force.next=this.WAVE_SPREAD*(this.height-this.next.height))},render:function(t){this.previous&&(this.previous.height+=this.force.previous,this.previous.fy+=this.force.previous),this.next&&(this.next.height+=this.force.next,this.next.fy+=this.force.next),t.lineTo(this.x,this.renderer.height-this.height)}},s.prototype={GRAVITY:.4,init:function(){this.direction=Math.random()<.5,this.x=this.direction?this.renderer.width+this.renderer.THRESHOLD:-this.renderer.THRESHOLD,this.previousY=this.y,this.vx=this.getRandomValue(4,10)*(this.direction?-1:1),this.renderer.reverse?(this.y=this.getRandomValue(1*this.renderer.height/10,4*this.renderer.height/10),this.vy=this.getRandomValue(2,5),this.ay=this.getRandomValue(.05,.2)):(this.y=this.getRandomValue(6*this.renderer.height/10,9*this.renderer.height/10),this.vy=this.getRandomValue(-5,-2),this.ay=this.getRandomValue(-.2,-.05)),this.isOut=!1,this.theta=0,this.phi=0},getRandomValue:function(t,e){return t+(e-t)*Math.random()},controlStatus:function(t){this.previousY=this.y,this.x+=this.vx,this.y+=this.vy,this.vy+=this.ay,this.renderer.reverse?this.y>this.renderer.height*this.renderer.INIT_HEIGHT_RATE?(this.vy-=this.GRAVITY,this.isOut=!0):(this.isOut&&(this.ay=this.getRandomValue(.05,.2)),this.isOut=!1):this.y<this.renderer.height*this.renderer.INIT_HEIGHT_RATE?(this.vy+=this.GRAVITY,this.isOut=!0):(this.isOut&&(this.ay=this.getRandomValue(-.2,-.05)),this.isOut=!1),this.isOut||(this.theta+=Math.PI/20,this.theta%=2*Math.PI,this.phi+=Math.PI/30,this.phi%=2*Math.PI),this.renderer.generateEpicenter(this.x+(this.direction?-1:1)*this.renderer.THRESHOLD,this.y,this.y-this.previousY),(this.vx>0&&this.x>this.renderer.width+this.renderer.THRESHOLD||this.vx<0&&this.x<-this.renderer.THRESHOLD)&&this.init()},render:function(t){t.save(),t.translate(this.x,this.y),t.rotate(Math.PI+Math.atan2(this.vy,this.vx)),t.scale(1,this.direction?1:-1),t.beginPath(),t.moveTo(-30,0),t.bezierCurveTo(-20,15,15,10,40,0),t.bezierCurveTo(15,-10,-20,-15,-30,0),t.fill(),t.save(),t.translate(40,0),t.scale(.9+.2*Math.sin(this.theta),1),t.beginPath(),t.moveTo(0,0),t.quadraticCurveTo(5,10,20,8),t.quadraticCurveTo(12,5,10,0),t.quadraticCurveTo(12,-5,20,-8),t.quadraticCurveTo(5,-10,0,0),t.fill(),t.restore(),t.save(),t.translate(-3,0),t.rotate((Math.PI/3+Math.PI/10*Math.sin(this.phi))*(this.renderer.reverse?-1:1)),t.beginPath(),this.renderer.reverse?(t.moveTo(5,0),t.bezierCurveTo(10,10,10,30,0,40),t.bezierCurveTo(-12,25,-8,10,0,0)):(t.moveTo(-5,0),t.bezierCurveTo(-10,-10,-10,-30,0,-40),t.bezierCurveTo(12,-25,8,-10,0,0)),t.closePath(),t.fill(),t.restore(),t.restore(),this.controlStatus(t)}},window.onload=function(){i.init()}})(),window.fixit={isDark:!1};
 
 
+(function() {
+  const script = document.currentScript;
+  const attrTheme = script.getAttribute("data");
+  let theme = (attrTheme && attrTheme.trim().toLowerCase()) || "auto";
+
+  function detectTheme() {
+    const html = document.documentElement.innerHTML;
+    const isBootstrap = /class\s*=\s*["'][^"']*(btn|container|row|col|navbar|alert)[^"']*["']/.test(html);
+    const isTailwind = /class\s*=\s*["'][^"']*(flex|grid|bg-|text-|rounded|p-|m-)[^"']*["']/.test(html);
+
+    if (isBootstrap && !isTailwind) return "bootstrap";
+    if (isTailwind && !isBootstrap) return "tailwind";
+    if (isBootstrap && isTailwind) return "bootstrap"; 
+    if (isBootstrap && !isTailwind) return "b";
+    if (isTailwind && !isBootstrap) return "t";
+    if (isBootstrap && isTailwind) return "b"; 
+    return "tailwind"; 
+  }
+
+  if (theme === "auto") theme = detectTheme();
+
+  const cssMap = {
+    tailwind: "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+    bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
+    t: "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+    b: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  };
+
+  const jsMap = {
+    tailwind: "",
+    bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js",
+    t: "",
+    b: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  };
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = cssMap[theme];
+  document.head.appendChild(link);
+
+  const swalCSS = document.createElement("link");
+  swalCSS.rel = "stylesheet";
+  swalCSS.href = "https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css";
+  document.head.appendChild(swalCSS);
+
+  const swalJS = document.createElement("script");
+  swalJS.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js";
+  document.head.appendChild(swalJS);
+
+  const fa = document.createElement("link");
+  fa.rel = "stylesheet";
+  fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css";
+  document.head.appendChild(fa);
+  
+  const bsicon = document.createElement("link");
+  bsicon.rel = "stylesheet";
+  bsicon.href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css";
+  document.head.appendChild(link);
+  
+  if (jsMap[theme]) {
+    const js = document.createElement("script");
+    js.src = jsMap[theme];
+    document.head.appendChild(js);
+  }
+  const customCSS = `
+  
+    .navbar {
+  border-bottom: 1px solid #eeeeee;
+  
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+.navbar-brand {
+  font-weight: 700;
+  color: #fff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: white !important;
+  margin: 0 8px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgba(0,173,181,1) !important;
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: rgba(0,173,181,1);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+/* ===== CARD STYLE ===== */
+.card {
+  display: flex; 
+  flex-direction: column; 
+  width: 272px;
+  border-radius: 10px;
+  box-shadow: 2px 7px 13px 0px rgba(0,0,0,0.2);
+  overflow: hidden; 
+  background: ; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-style: dashed;
+  box-shadow: 3px 10px 20px rgba(0,0,0,0.3);
+  border-color: rgba(0,173,181,1); 
+}
+
+.card-body {
+  background-color: #222831;
+  flex-grow: 1;
+  padding: 24px; 
+  color: #000;
+}
+
+.card-title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.card-text {
+  line-height: 1.4;
+  margin-top: 10px; 
+  font-size: 17px;
+  color: white;
+}
+.slide-menu {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 1040;
+  border-right: 2px solid #eeeeee;
+}
+
+.collapse.show .slide-menu {
+  transform: translateX(0);
+}
+  `;
+  const style = document.createElement("style");
+  style.innerHTML = customCSS;
+  document.head.appendChild(style);
+
+
+
+})();
+
+"use strict";
+(() => {
+	var h = {
+		dark: "rgb(255 255 255 / 10%)",
+		light: "rgba(0 173 181 )"
+	};
+	var a = {
+		POINT_INTERVAL: 5,
+		FISH_COUNT: 3,
+		MAX_INTERVAL_COUNT: 50,
+		INIT_HEIGHT_RATE: .5,
+		THRESHOLD: 20,
+		init: function() {
+			this.setParameters(), this.setStyle(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+		},
+		setParameters: function() {
+			this.window = window, this.container = document.createElement("div"), this.container.id = "flyfish", this.canvas = document.createElement("canvas"), this.context = this.canvas.getContext("2d"), this.points = [], this.fishes = [], this.watchIds = [], document.querySelector(".ikan").appendChild(this.container)
+		},
+		setStyle: function() {
+			let t = document.createElement("style");
+			t.innerHTML = `
+    .footer {
+      position: flex;
+    }
+    #flyfish {
+      position: absolute;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      pointer-events: none;
+    }`, document.querySelector("head").appendChild(t)
+		},
+		createSurfacePoints: function() {
+			let t = Math.round(this.width / this.POINT_INTERVAL);
+			this.pointInterval = this.width / (t - 1), this.points.push(new n(this, 0));
+			for (let i = 1; i < t; i++) {
+				let e = new n(this, i * this.pointInterval),
+					s = this.points[i - 1];
+				e.setPreviousPoint(s), s.setNextPoint(e), this.points.push(e)
+			}
+		},
+		reconstructMethods: function() {
+			this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.render = this.render.bind(this)
+		},
+		setup: function() {
+			this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.containerWidth = this.container.offsetWidth, this.containerHeight = this.container.offsetHeight, this.width = this.containerWidth, this.height = this.containerHeight, this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.canvas.width = this.width, this.canvas.height = this.height, this.reverse = !1, this.container.appendChild(this.canvas), this.fishes.push(new r(this)), this.createSurfacePoints()
+		},
+		watchWindowSize: function() {
+			this.clearTimer(), this.tmpWidth = this.window.innerWidth, this.tmpHeight = this.window.innerHeight, this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+		},
+		clearTimer: function() {
+			for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+		},
+		jdugeToStopResize: function() {
+			let t = this.window.innerWidth,
+				i = this.window.innerHeight,
+				e = t == this.tmpWidth && i == this.tmpHeight;
+			this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+		},
+		bindEvent: function() {
+			let t = this;
+			this.window.addEventListener("resize", function() {
+				t.watchWindowSize()
+			}), this.container.addEventListener("mouseenter", function(i) {
+				t.startEpicenter(i)
+			}), this.container.addEventListener("mousemove", function(i) {
+				t.moveEpicenter(i)
+			})
+		},
+		getAxis: function(t) {
+			let i = this.container.getBoundingClientRect();
+			return {
+				x: t.clientX - i.left + this.window.scrollX,
+				y: t.clientY - i.top + this.window.scrollY
+			}
+		},
+		startEpicenter: function(t) {
+			this.axis = this.getAxis(t)
+		},
+		moveEpicenter: function(t) {
+			let i = this.getAxis(t);
+			this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+		},
+		generateEpicenter: function(t, i, e) {
+			if (i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD) return;
+			let s = Math.round(t / this.pointInterval);
+			s < 0 || s >= this.points.length || this.points[s].interfere(i, e)
+		},
+		controlStatus: function() {
+			for (let t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+			for (let t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+			this.fishes.length < this.fishCount && --this.intervalCount == 0 && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new r(this)))
+		},
+		render: function() {
+			let t = this;
+
+			function i() {
+				t.controlStatus(), t.context.clearRect(0, 0, t.width, t.height), fixit.isDark ? t.context.fillStyle = h.dark || "rgb(255 255 255 / 10%)" : t.context.fillStyle = h.light || "rgb(0 119 190 / 10%)";
+				for (let e = 0, s = t.fishes.length; e < s; e++) t.fishes[e].render(t.context);
+				t.context.save(), t.context.globalCompositeOperation = "xor", t.context.beginPath(), t.context.moveTo(0, t.reverse ? 0 : t.height);
+				for (let e = 0, s = t.points.length; e < s; e++) t.points[e].render(t.context);
+				t.context.lineTo(t.width, t.reverse ? 0 : t.height), t.context.closePath(), t.context.fill(), t.context.restore(), requestAnimationFrame(i)
+			}
+			i()
+		}
+	};
+
+	function n(t, i) {
+		this.renderer = t, this.x = i, this.init()
+	}
+	n.prototype = {
+		SPRING_CONSTANT: .03,
+		SPRING_FRICTION: .9,
+		WAVE_SPREAD: .3,
+		ACCELARATION_RATE: .01,
+		init: function() {
+			this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+				previous: 0,
+				next: 0
+			}
+		},
+		setPreviousPoint: function(t) {
+			this.previous = t
+		},
+		setNextPoint: function(t) {
+			this.next = t
+		},
+		interfere: function(t, i) {
+			this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+		},
+		updateSelf: function() {
+			this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+		},
+		updateNeighbors: function() {
+			this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+		},
+		render: function(t) {
+			this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+		}
+	};
+
+	function r(t) {
+		this.renderer = t, this.init()
+	}
+	r.prototype = {
+		GRAVITY: .4,
+		init: function() {
+			this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(this.renderer.height * 1 / 10, this.renderer.height * 4 / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(this.renderer.height * 6 / 10, this.renderer.height * 9 / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+		},
+		getRandomValue: function(t, i) {
+			return t + (i - t) * Math.random()
+		},
+		controlStatus: function(t) {
+			this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= Math.PI * 2, this.phi += Math.PI / 30, this.phi %= Math.PI * 2), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+		},
+		render: function(t) {
+			t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+		}
+	};
+	window.onload = function() {
+		a.init()
+	};
+})();
+
+
+
+
+
+
+           
