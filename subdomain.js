@@ -49,7 +49,8 @@ async function startScan() {
       domainInput.disabled = false;
       btnText.textContent = 'Mulai Scan';
       btnSpinner.classList.add('d-none');
-}
+},
+
 const globalStyles = document.createElement('style');
 
 globalStyles.innerHTML = `
