@@ -19,11 +19,11 @@ async function startScan() {
       log.textContent = 'Mencari subdomain untuk: ' + domain + '\n\n';
 
       const sources = [
-        `https://rapiddns.io/subdomain/${domain}?full=1`,
-        `https://crt.sh/?q=%25.${domain}`,
-        `https://jldc.me/anubis/subdomains/${domain}`,
-        `https://api.hackertarget.com/hostsearch/?q=${domain}`,
-        `https://otx.alienvault.com/api/v1/indicators/domain/${domain}/passive_dns`
+        `https://api.allorigins.win/raw?url=https://rapiddns.io/subdomain/${domain}?full=1`,
+        `https://api.allorigins.win/raw?url=https://crt.sh/?q=%25.${domain}`,
+        `https://api.allorigins.win/raw?url=https://jldc.me/anubis/subdomains/${domain}`,
+        `https://api.allorigins.win/raw?url=https://api.hackertarget.com/hostsearch/?q=${domain}`,
+        `https://api.allorigins.win/raw?url=https://otx.alienvault.com/api/v1/indicators/domain/${domain}/passive_dns`
       ];
 
       let allSubs = new Set();
