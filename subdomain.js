@@ -50,3 +50,21 @@ async function startScan() {
       btnText.textContent = 'Mulai Scan';
       btnSpinner.classList.add('d-none');
 }
+const globalStyles = document.createElement('style');
+
+globalStyles.innerHTML = `
+  body {
+      background-color: var(--bs-dark-bg-subtle);
+    }
+    #log {
+      max-height: 400px;
+      overflow-y: auto;
+      background-color: var(--bs-tertiary-bg);
+      border-radius: var(--bs-border-radius);
+      padding: 1rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+`;
+
+document.head.appendChild(globalStyles);
