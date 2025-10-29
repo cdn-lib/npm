@@ -9,6 +9,7 @@ Sebuah theme plugn'play siap pakai dengan plugin yang orang sering pakai, sepert
 
 
 ## []=========[] PLUGIN []=========[]
+
 ```html
 
 •  font-awesome
@@ -25,6 +26,7 @@ NOTE !!!
 </body>
 ```
 <hr>
+
 ## CODE
 
 ```html 
