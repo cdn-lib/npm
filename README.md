@@ -42,11 +42,11 @@ NOTE !!!
 ```
 • Bootstap Theme
 ```
-<script src="https://cdn.jsdelivr.net/gh/cdn-lib/npm@3.0/theme.js" data="bootstap"></script>
+<script src="https://cdn.jsdelivr.net/gh/cdn-lib/npm@3.0/theme.js" data="b"></script>
 ```
 • Tainwild Theme
 ```
-<script src="https://cdn.jsdelivr.net/gh/cdn-lib/npm@3.0/theme.js" data="tainwild"></script>
+<script src="https://cdn.jsdelivr.net/gh/cdn-lib/npm@3.0/theme.js" data="t"></script>
 ```
 ( Letakan sebelum <body> atau sebelum </body> )
 
