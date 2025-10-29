@@ -455,7 +455,7 @@ body {
       position: relative;
     }
     #flyfish {
-      position: absolute;
+      position: flex;
       width: 100%;
       height: 230px;
       overflow: hidden;
