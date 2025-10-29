@@ -33,8 +33,7 @@ NOTE !!!
 
 (TEMPEL CODE INI UNTUK MENAMPILKAN IKAN TERBANG) -_<
 
-
-## =================================== ##
+<hr>
 
 • Lineart Theme
 ```
