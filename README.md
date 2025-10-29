@@ -1,7 +1,7 @@
 
 
 <h3><strong>
-CDN-LIB/NPM 
+YUMEIRO THEME
 <hr>
 Sebuah theme plugn'play siap pakai dengan plugin yang orang sering pakai, seperti bootstap & tainwild
 
