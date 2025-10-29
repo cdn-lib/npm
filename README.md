@@ -61,10 +61,9 @@ CONTACTS !!!
 OWNER WHATSAPP : <a class="btn" href="https://wa.me/6285135311112"> 6285135311112/ YUMEIRO</a><br>
 
 GMAIL : 
-<hr><br>
+<hr>
 <a class="btn" href="mailto:kagurairyosuke@gmail.com">kagurairyosuke@gmail.com</a> <br>
         <a class="btn" href="mailto:yumeiro@mirai.re">yumeiro@mirai.re</a><br>
         <a class="btn" href="mailto:yumeiro.dev@via.tokyo.jp">yumeiro.dev@via.tokyo.jp</a><br>
         <a class="btn" href="mailto:yumeiroryosuke@svk.jp">yumeiroryosuke@svk.jp</a><br>
         
-GITHUB : https://github.com/cdn-lib/
