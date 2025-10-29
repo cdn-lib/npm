@@ -1,3 +1,11 @@
+<h3><strong>
+CDN-LIB/NPM 
+<hr>
+Sebuah theme plugn'play siap pakai dengan plugin yang orang sering pakai, seperti bootstap & tainwild
+
+</strong></h3>
+
+
 ## []=========[] PLUGIN []=========[]
 ```html
 
@@ -25,19 +33,16 @@ NOTE !!!
 
 ## NOTE !!!!!
 
-```html
-JANGAN DI UBAH / DOWNLOAD SEMBARANGAN
-CODE INI SUDAH DI RANCANG AGAR TERHUBUNG KE SERVER KAMI, JADI TIDAK BISA DIUBAH ATAU DI MODIF SECARA PAKSA DAN SESUKA'HATI ANDA
+```
+MAU BANTU MENGEMBANGKAN PROJEK INI ?
 
-WARNING !!!
-RENAME / MENDOWNLOAD CODE TANPA SEPENGETAHUAN ADMIN 
-RESIKO DI TANGGUNG SENDIRI
+CONTACTS !!!
 
-OWNER WHATSAPP : 6285135311112 / YUMEIRO
-GMAIL : kagurairyosuke@gmail.com
-        yumeiro@mirai.re
-        yumeiro.dev@via.tokyo.jp
-        yumeiroryosuke@svk.jp
+OWNER WHATSAPP : <a href="//wa.me/6285135311112"> 6285135311112/ YUMEIRO</a>
+GMAIL : <a href="mailto:kagurairyosuke@gmail.com">kagurairyosuke@gmail.com</a>
+        <a href="mailto:yumeiro@mirai.re">yumeiro@mirai.re</a>
+        <a href="mailto:yumeiro.dev@via.tokyo.jp">yumeiro.dev@via.tokyo.jp</a>
+        <a href="mailto:yumeiroryosuke@svk.jp">yumeiroryosuke@svk.jp</a>
         
 GITHUB : https://github.com/cdn-lib/
 ```
