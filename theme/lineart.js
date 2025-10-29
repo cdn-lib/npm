@@ -1,0 +1,593 @@
+/*                              
+
+           CDN BY YUMEIRO                           
+
+[]=========[] LIST MENU []=========[]
+
+•  font-awesome
+•  bootstrap
+•  tailwind
+•  sweetalert2
+• IKAN / JL'FISH FLAY FOOTHER
+
+NOTE !!!
+
+PASTE CODE DI BAWAH SEBELUM </body>
+code : <ikan class="ikan"></ikan> 
+
+PASTE CODE DI BAWAH SESUDAH </body>
+<scrip> 
+window.ikan = { isDark: false };
+</script>
+
+(TEMPEL CODE INI UNTUK MENAMPILKAN IKAN TERBANG) -_<
+
+
+JANGAN DI UBAH / DOWNLOAD SEMBARANGAN
+CODE INI SUDAH DI RANCANG AGAR TERHUBUNG KE SERVER KAMI, JADI TIDAK BISA DIUBAH ATAU DI MODIF SECARA PAKSA DAN SESUKA'HATI ANDA
+
+WARNING !!!
+RENAME / MENDOWNLOAD CODE TANPA SEPENGETAHUAN ADMIN 
+RESIKO DI TANGGUNG SENDIRI
+
+OWNER WHATSAPP : 6285135311112 / YUMEIRO
+GMAIL : kagurairyosuke@gmail.com
+        yumeiro@mirai.re
+        yumeiro.dev@via.tokyo.jp
+        yumeiroryosuke@svk.jp
+        
+GITHUB : https://github.com/cdn-lib/
+
+*/
+
+
+
+(function() {
+  const script = document.currentScript;
+  const attrTheme = script.getAttribute("data");
+  let theme = (attrTheme && attrTheme.trim().toLowerCase()) || "auto";
+
+  function detectTheme() {
+    const html = document.documentElement.innerHTML;
+    const isBootstrap = /class\s*=\s*["'][^"']*(btn|container|row|col|navbar|alert)[^"']*["']/.test(html);
+    const isTailwind = /class\s*=\s*["'][^"']*(flex|grid|bg-|text-|rounded|p-|m-)[^"']*["']/.test(html);
+
+    if (isBootstrap && !isTailwind) return "bootstrap";
+    if (isTailwind && !isBootstrap) return "tailwind";
+    if (isBootstrap && isTailwind) return "bootstrap"; 
+    if (isBootstrap && !isTailwind) return "b";
+    if (isTailwind && !isBootstrap) return "t";
+    if (isBootstrap && isTailwind) return "b"; 
+    return "tailwind"; 
+  }
+
+  if (theme === "auto") theme = detectTheme();
+
+  const cssMap = {
+    tailwind: "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+    bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
+    t: "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css",
+    b: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  };
+
+  const jsMap = {
+    tailwind: "",
+    bootstrap: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js",
+    t: "",
+    b: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  };
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = cssMap[theme];
+  document.head.appendChild(link);
+
+  const swalCSS = document.createElement("link");
+  swalCSS.rel = "stylesheet";
+  swalCSS.href = "https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css";
+  document.head.appendChild(swalCSS);
+
+  const swalJS = document.createElement("script");
+  swalJS.src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js";
+  document.head.appendChild(swalJS);
+
+  const fa = document.createElement("link");
+  fa.rel = "stylesheet";
+  fa.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css";
+  document.head.appendChild(fa);
+  
+  const bsicon = document.createElement("link");
+  bsicon.rel = "stylesheet";
+  bsicon.href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css";
+  document.head.appendChild(link);
+  
+  if (jsMap[theme]) {
+    const js = document.createElement("script");
+    js.src = jsMap[theme];
+    document.head.appendChild(js);
+  }
+  
+   const customCSS = `
+  @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+:root {
+  --la-bg: #fefefe;
+  --la-line: #222;
+  --la-muted: #6c6c6c;
+  --la-radius: 8px;
+  --la-thick: 2px;
+  --la-transition: all 0.2s ease-in-out;
+  --la-font: 'Kalam', cursive;
+}
+
+body {
+  background: var(--la-bg) !important;
+  color: var(--la-line) !important;
+  box-shadow: none !important;
+  font-family: var(--la-font);
+}
+
+* {
+  box-shadow: none !important;
+}
+hr {
+  border-top: var(--la-thick) solid var(--la-line) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
+  font-weight: 700;
+}
+
+.btn, .form-control, .form-select, .navbar-brand, .nav-link, 
+.card-title, .modal-title, .alert, .badge, .dropdown-item,
+.accordion-button, .page-link {
+   font-family: var(--la-font);
+}
+
+.navbar {
+  background: var(--la-bg) !important;
+  border-bottom: var(--la-thick) solid var(--la-line) !important;
+}
+.nav-link {
+  color: var(--la-line) !important;
+  border-radius: var(--la-radius);
+  transition: var(--la-transition);
+}
+.nav-link:hover,
+.nav-link:focus {
+  background: rgba(0,0,0,.05);
+}
+
+.navbar-toggler {
+  border: var(--la-thick) solid var(--la-line) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:focus {
+  box-shadow: 0 0 0 4px rgba(0,0,0,.15) !important;
+}
+
+.card-header,
+.card-footer {
+  border-bottom: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 4px rgba(0,0,0,.15) !important;
+  outline: none !important;
+}
+
+.input-group-text {
+  border: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+}
+
+.table th,
+.table td {
+  border-bottom: var(--la-thick) solid var(--la-line) !important;
+}
+.table thead th {
+  background: rgba(0,0,0,.05) !important;
+}
+
+.modal-header {
+  border-bottom: var(--la-thick) solid var(--la-line) !important;
+}
+
+.dropdown-menu {
+  border: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+}
+.dropdown-item {
+  color: var(--la-line) !important;
+  border-radius: var(--la-radius) !important;
+  transition: var(--la-transition);
+}
+.dropdown-item:hover {
+  background: rgba(0,0,0,.05) !important;
+}
+
+.accordion-button {
+  border-bottom: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+  color: var(--la-line) !important;
+  transition: var(--la-transition);
+}
+.accordion-button:not(.collapsed) {
+  background: rgba(0,0,0,.05) !important;
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 4px rgba(0,0,0,.15) !important;
+}
+
+.badge {
+  border: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+  color: var(--la-line) !important;
+  border-radius: 999px !important;
+}
+
+.progress {
+  border: var(--la-thick) solid var(--la-line) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+}
+.progress-bar {
+  background: var(--la-line) !important;
+}
+
+.page-link {
+  border: var(--la-thick) solid var(--la-line) !important;
+  color: var(--la-line) !important;
+  transition: var(--la-transition);
+}
+.page-link:hover {
+  background: rgba(0,0,0,.05);
+}
+
+.nav-pills .nav-link,
+.nav-tabs .nav-link {
+  border: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+}
+.nav-pills .nav-link.active,
+.nav-tabs .nav-link.active {
+  background: rgba(0,0,0,.1) !important;
+  border-width: var(--la-thick) !important;
+}
+
+.offcanvas {
+  border-left: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+}
+
+.form-check-input {
+  border: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+}
+.form-check-input:checked {
+  background: var(--la-line) !important;
+}
+
+.card, .modal-content, .alert, .toast, .btn, .form-control, .form-select, 
+.navbar-brand, .table, .list-group-item, .accordion-item {
+  border: var(--la-thick) solid var(--la-line) !important;
+  background: var(--la-bg) !important;
+  color: var(--la-line) !important;
+  position: relative;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+  overflow: hidden;
+}
+
+.card::after, .modal-content::after, .alert::after, .toast::after, .btn::after, 
+.form-control::after, .form-select::after, .navbar-brand::after, 
+.table::after, .list-group-item::after, .accordion-item::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: var(--la-thick);
+  background: var(--la-line);
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(-10deg);
+}
+
+.card::before, .modal-content::before, .alert::before, .toast::before, 
+.btn::before, .navbar-brand::before, .table::before, .list-group-item::before,
+.accordion-item::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: var(--la-muted);
+  bottom: 8px;
+  right: 10px;
+  transform: rotate(-10deg);
+}
+
+.swal2-popup {
+  font-family: var(--la-font);
+  background: var(--la-bg) !important;
+  border: var(--la-thick) solid var(--la-line) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+  color: var(--la-line) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.swal2-popup::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: var(--la-thick);
+  background: var(--la-line);
+  bottom: 6px;
+  right: 10px;
+  transform: rotate(-10deg);
+}
+.swal2-popup::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 1px;
+  background: var(--la-muted);
+  bottom: 9px;
+  right: 15px;
+  transform: rotate(-10deg);
+}
+
+.swal2-title {
+  color: var(--la-line) !important;
+  font-weight: 700;
+}
+.swal2-html-container {
+  color: var(--la-muted) !important;
+}
+.swal2-header {
+  border-bottom: var(--la-thick) solid var(--la-line) !important;
+}
+.swal2-actions {
+  border-top: var(--la-thick) solid var(--la-line) !important;
+}
+.swal2-confirm,
+.swal2-cancel,
+.swal2-deny {
+  font-family: var(--la-font) !important;
+  font-weight: 700 !important;
+  border: var(--la-thick) solid var(--la-line) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+  background: var(--la-bg) !important;
+  color: var(--la-line) !important;
+  transition: var(--la-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.swal2-confirm::after, .swal2-cancel::after, .swal2-deny::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: var(--la-thick);
+  background: var(--la-line);
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(-10deg);
+}
+
+.swal2-confirm:hover,
+.swal2-cancel:hover,
+.swal2-deny:hover {
+  background: rgba(0,0,0,.08) !important;
+}
+.swal2-input,
+.swal2-file,
+.swal2-textarea {
+  font-family: var(--la-font) !important;
+  border: var(--la-thick) solid var(--la-line) !important;
+  border-radius: var(--la-radius) 6px var(--la-radius) 8px !important;
+  background: var(--la-bg) !important;
+  color: var(--la-line) !important;
+  position: relative;
+  overflow: hidden;
+}
+.swal2-input:focus,
+.swal2-file:focus,
+.swal2-textarea:focus {
+  box-shadow: 0 0 0 4px rgba(0,0,0,.15) !important;
+  outline: none !important;
+}
+
+   `;
+  const style = document.createElement("style");
+  style.innerHTML = customCSS;
+  document.head.appendChild(style);
+
+
+
+})();
+
+"use strict";
+(() => {
+	var h = {
+		dark: "rgb(255 255 255 / 10%)",
+		light: "rgb(0 0 0 / 95%)"
+	};
+	var a = {
+		POINT_INTERVAL: 5,
+		FISH_COUNT: 3,
+		MAX_INTERVAL_COUNT: 50,
+		INIT_HEIGHT_RATE: .5,
+		THRESHOLD: 20,
+		init: function() {
+			this.setParameters(), this.setStyle(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+		},
+		setParameters: function() {
+			this.window = window, this.container = document.createElement("div"), this.container.id = "flyfish", this.canvas = document.createElement("canvas"), this.context = this.canvas.getContext("2d"), this.points = [], this.fishes = [], this.watchIds = [], document.querySelector(".ikan").appendChild(this.container)
+		},
+		setStyle: function() {
+			let t = document.createElement("style");
+			t.innerHTML = `
+    .ikan {
+      position: flex;
+    }
+    #flyfish {
+      position: flex;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      pointer-events: none;
+    }`, document.querySelector("head").appendChild(t)
+		},
+		createSurfacePoints: function() {
+			let t = Math.round(this.width / this.POINT_INTERVAL);
+			this.pointInterval = this.width / (t - 1), this.points.push(new n(this, 0));
+			for (let i = 1; i < t; i++) {
+				let e = new n(this, i * this.pointInterval),
+					s = this.points[i - 1];
+				e.setPreviousPoint(s), s.setNextPoint(e), this.points.push(e)
+			}
+		},
+		reconstructMethods: function() {
+			this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.render = this.render.bind(this)
+		},
+		setup: function() {
+			this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.containerWidth = this.container.offsetWidth, this.containerHeight = this.container.offsetHeight, this.width = this.containerWidth, this.height = this.containerHeight, this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.canvas.width = this.width, this.canvas.height = this.height, this.reverse = !1, this.container.appendChild(this.canvas), this.fishes.push(new r(this)), this.createSurfacePoints()
+		},
+		watchWindowSize: function() {
+			this.clearTimer(), this.tmpWidth = this.window.innerWidth, this.tmpHeight = this.window.innerHeight, this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+		},
+		clearTimer: function() {
+			for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+		},
+		jdugeToStopResize: function() {
+			let t = this.window.innerWidth,
+				i = this.window.innerHeight,
+				e = t == this.tmpWidth && i == this.tmpHeight;
+			this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+		},
+		bindEvent: function() {
+			let t = this;
+			this.window.addEventListener("resize", function() {
+				t.watchWindowSize()
+			}), this.container.addEventListener("mouseenter", function(i) {
+				t.startEpicenter(i)
+			}), this.container.addEventListener("mousemove", function(i) {
+				t.moveEpicenter(i)
+			})
+		},
+		getAxis: function(t) {
+			let i = this.container.getBoundingClientRect();
+			return {
+				x: t.clientX - i.left + this.window.scrollX,
+				y: t.clientY - i.top + this.window.scrollY
+			}
+		},
+		startEpicenter: function(t) {
+			this.axis = this.getAxis(t)
+		},
+		moveEpicenter: function(t) {
+			let i = this.getAxis(t);
+			this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+		},
+		generateEpicenter: function(t, i, e) {
+			if (i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD) return;
+			let s = Math.round(t / this.pointInterval);
+			s < 0 || s >= this.points.length || this.points[s].interfere(i, e)
+		},
+		controlStatus: function() {
+			for (let t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+			for (let t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+			this.fishes.length < this.fishCount && --this.intervalCount == 0 && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new r(this)))
+		},
+		render: function() {
+			let t = this;
+
+			function i() {
+				t.controlStatus(), t.context.clearRect(0, 0, t.width, t.height), ikan.dark ? t.context.fillStyle = h.dark || "rgb(255 255 255 / 10%)" : t.context.fillStyle = h.light || "rgb(255 255 255)";
+				for (let e = 0, s = t.fishes.length; e < s; e++) t.fishes[e].render(t.context);
+				t.context.save(), t.context.globalCompositeOperation = "xor", t.context.beginPath(), t.context.moveTo(0, t.reverse ? 0 : t.height);
+				for (let e = 0, s = t.points.length; e < s; e++) t.points[e].render(t.context);
+				t.context.lineTo(t.width, t.reverse ? 0 : t.height), t.context.closePath(), t.context.fill(), t.context.restore(), requestAnimationFrame(i)
+			}
+			i()
+		}
+	};
+
+	function n(t, i) {
+		this.renderer = t, this.x = i, this.init()
+	}
+	n.prototype = {
+		SPRING_CONSTANT: .03,
+		SPRING_FRICTION: .9,
+		WAVE_SPREAD: .3,
+		ACCELARATION_RATE: .01,
+		init: function() {
+			this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+				previous: 0,
+				next: 0
+			}
+		},
+		setPreviousPoint: function(t) {
+			this.previous = t
+		},
+		setNextPoint: function(t) {
+			this.next = t
+		},
+		interfere: function(t, i) {
+			this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+		},
+		updateSelf: function() {
+			this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+		},
+		updateNeighbors: function() {
+			this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+		},
+		render: function(t) {
+			this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+		}
+	};
+
+	function r(t) {
+		this.renderer = t, this.init()
+	}
+	r.prototype = {
+		GRAVITY: .4,
+		init: function() {
+			this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(this.renderer.height * 1 / 10, this.renderer.height * 4 / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(this.renderer.height * 6 / 10, this.renderer.height * 9 / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+		},
+		getRandomValue: function(t, i) {
+			return t + (i - t) * Math.random()
+		},
+		controlStatus: function(t) {
+			this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= Math.PI * 2, this.phi += Math.PI / 30, this.phi %= Math.PI * 2), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+		},
+		render: function(t) {
+			t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+		}
+	};
+	window.onload = function() {
+		a.init()
+	};
+})();
+
+// window.ikan = { isDark: false };
+window.ikan = { dark: false }
+
+
+
+
