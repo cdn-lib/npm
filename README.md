@@ -33,7 +33,6 @@ NOTE !!!
 
 ## NOTE !!!!!
 
-```
 MAU BANTU MENGEMBANGKAN PROJEK INI ?
 
 CONTACTS !!!
@@ -45,4 +44,3 @@ GMAIL : <a href="mailto:kagurairyosuke@gmail.com">kagurairyosuke@gmail.com</a>
         <a href="mailto:yumeiroryosuke@svk.jp">yumeiroryosuke@svk.jp</a>
         
 GITHUB : https://github.com/cdn-lib/
-```
