@@ -14,12 +14,6 @@ code :
 <ikan class="ikan"></ikan>
 ```
 
-## PASTE CODE DI BAWAH SESUDAH </body>
-```html
-<scrip> 
-window.fixit = { isDark: false };
-</script>
-```
 (TEMPEL CODE INI UNTUK MENAMPILKAN IKAN TERBANG) -_<
 
 ## NOTE !!!!!
