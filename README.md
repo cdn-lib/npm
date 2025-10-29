@@ -13,6 +13,7 @@ NOTE !!!
 ## PASTE CODE DI BAWAH SEBELUM 
 ```html 
 </body>
+```
 <hr>
 ## CODE
 ```html 
