@@ -58,7 +58,7 @@ MAU BANTU MENGEMBANGKAN PROJEK INI ?
 
 CONTACTS !!!
 
-OWNER WHATSAPP : <a class="btn" href="//wa.me/6285135311112"> 6285135311112/ YUMEIRO</a><br>
+OWNER WHATSAPP : <a class="btn" href="https://wa.me/6285135311112"> 6285135311112/ YUMEIRO</a><br>
 
 GMAIL : <a class="btn" href="mailto:kagurairyosuke@gmail.com">kagurairyosuke@gmail.com</a> <br>
         <a class="btn" href="mailto:yumeiro@mirai.re">yumeiro@mirai.re</a><br>
