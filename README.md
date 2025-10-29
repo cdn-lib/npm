@@ -56,15 +56,16 @@ NOTE !!!
 
 MAU BANTU MENGEMBANGKAN PROJEK INI ?
 
-CONTACTS !!!
+## CONTACTS !!!
 
 OWNER WHATSAPP : <a class="btn" href="https://wa.me/6285135311112"> 6285135311112/ YUMEIRO</a><br>
 
+## GMAIL
+
 ```
-GMAIL : 
-kagurairyosuke@gmail.com
- yumeiro@mirai.re
- yumeiro.dev@via.tokyo.jp
- yumeiroryosuke@svk.jp
+• kagurairyosuke@gmail.com
+• yumeiro@mirai.re
+• yumeiro.dev@via.tokyo.jp
+• yumeiroryosuke@svk.jp
 ```
         
