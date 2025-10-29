@@ -109,102 +109,6 @@ GITHUB : https://github.com/cdn-lib/
   
    const customCSS = `
   
-// .navbar {
-//   border-bottom: 1px solid #eeeeee;
-  
-//   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-// }
-// .navbar-brand {
-//   font-weight: 700;
-//   color: #fff !important;
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-// }
-
-// .nav-link {
-//   color: white !important;
-//   margin: 0 8px;
-//   position: relative;
-//   transition: all 0.3s ease;
-// }
-
-// .nav-link:hover {
-//   color: rgba(0,173,181,1) !important;
-//   transform: translateY(-2px);
-// }
-
-// .nav-link::after {
-//   content: "";
-//   position: absolute;
-//   bottom: -4px;
-//   left: 0;
-//   width: 0%;
-//   height: 2px;
-//   background: rgba(0,173,181,1);
-//   transition: width 0.3s ease;
-// }
-
-// .nav-link:hover::after {
-//   width: 100%;
-// }
-
-
-// /* ===== CARD STYLE ===== */
-// .card {
-//   display: flex; 
-//   flex-direction: column; 
-//   width: 272px;
-//   border-radius: 10px;
-//   box-shadow: 2px 7px 13px 0px rgba(0,0,0,0.2);
-//   overflow: hidden; 
-//   background: ; 
-//   transition: transform 0.2s ease, box-shadow 0.2s ease;
-// }
-
-// .card:hover {
-//   transform: translateY(-5px);
-//   border-style: dashed;
-//   box-shadow: 3px 10px 20px rgba(0,0,0,0.3);
-//   border-color: rgba(0,173,181,1); 
-// }
-
-// .card-body {
-//   background-color: #222831;
-//   flex-grow: 1;
-//   padding: 24px; 
-//   color: #000;
-// }
-
-// .card-title {
-//   color: #000000;
-//   font-weight: bold;
-//   font-size: 18px;
-//   font-family: Arial, Helvetica, sans-serif; 
-//   margin: 0; 
-//   padding: 0; 
-// }
-
-// .card-text {
-//   line-height: 1.4;
-//   margin-top: 10px; 
-//   font-size: 17px;
-//   color: white;
-// }
-// .slide-menu {
-//   position: fixed;
-//   top: 56px;
-//   left: 0;
-//   width: 250px;
-//   height: 100vh;
-//   transform: translateX(-100%);
-//   transition: transform 0.4s ease;
-//   z-index: 1040;
-//   border-right: 2px solid #eeeeee;
-// }
-
-// .collapse.show .slide-menu {
-//   transform: translateX(0);
-// }
    `;
   const style = document.createElement("style");
   style.innerHTML = customCSS;
@@ -239,7 +143,7 @@ GITHUB : https://github.com/cdn-lib/
       position: flex;
     }
     #flyfish {
-      position: absolute;
+      position: flex;
       width: 100%;
       height: 230px;
       overflow: hidden;
