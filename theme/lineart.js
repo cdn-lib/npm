@@ -408,6 +408,18 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   box-shadow: 0 0 0 4px rgba(0,0,0,.15) !important;
   outline: none !important;
 }
+html {
+  background-color: #ffffff !important;
+  background-image:
+    linear-gradient(#00000015 1px, transparent 1px),
+    linear-gradient(90deg, #00000015 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center top;
+}
+
+body {
+  background: transparent !important;
+}
 
    `;
   const style = document.createElement("style");
@@ -440,10 +452,10 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 			let t = document.createElement("style");
 			t.innerHTML = `
     .ikan {
-      position: flex;
+      position: relative;
     }
     #flyfish {
-      position: flex;
+      position: absolute;
       width: 100%;
       height: 230px;
       overflow: hidden;
