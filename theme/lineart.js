@@ -367,8 +367,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 html {
   background-color: #ffffff !important;
   background-image:
-    linear-gradient(#00000015 1px, transparent 1px),
-    linear-gradient(90deg, #00000015 1px, transparent 1px);
+    linear-gradient(gray 1px, transparent 1px),
+    linear-gradient(90deg, gray 1px, transparent 1px);
   background-size: 48px 48px;
   background-position: center top;
 }
