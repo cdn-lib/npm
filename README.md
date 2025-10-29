@@ -62,6 +62,12 @@ MAU BANTU MENGEMBANGKAN PROJEK INI ?
 
 OWNER WHATSAPP : <a class="btn" href="https://wa.me/6285135311112"> 6285135311112/ YUMEIRO</a><br>
 
+## Saluran WhatsApp
+https://whatsapp.com/channel/0029VbB12efFnSzAuG7u1O1W
+
+## Group WhatsApp
+https://chat.whatsapp.com/LHhxJMygG8hCyk968u3tuU?mode=wwt
+
 ## GMAIL
 
 ```
