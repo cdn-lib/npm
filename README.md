@@ -15,7 +15,7 @@ Sebuah theme plugn'play siap pakai dengan plugin yang orang sering pakai, sepert
 •  bootstrap
 •  tailwind
 •  sweetalert2
-• IKAN / JL'FISH FLAY FOOTHER
+• IKAN TERBANG / FLAYING FISHES FOOTHER
 ```
 
 NOTE !!!
