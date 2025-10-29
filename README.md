@@ -8,7 +8,7 @@ Sebuah theme plugn'play siap pakai dengan plugin yang orang sering pakai, sepert
 </strong></h3>
 
 
-## []=========[] PLUGIN []=========[]
+## [] PLUGIN []
 
 ```html
 
@@ -21,13 +21,13 @@ Sebuah theme plugn'play siap pakai dengan plugin yang orang sering pakai, sepert
 
 NOTE !!!
 
-## PASTE CODE DI BAWAH SEBELUM 
+## [] PASTE CODE DI BAWAH SEBELUM []
 ```html 
 </body>
 ```
 <hr>
 
-## CODE
+## [] CODE []
 
 ```html 
 <ikan class="ikan"></ikan>
@@ -54,21 +54,21 @@ NOTE !!!
 
 
 
-## NOTE !!!!!
+## [] NOTE []
 
 MAU BANTU MENGEMBANGKAN PROJEK INI ?
 
-## CONTACTS !!!
+## [] CONTACTS []
 
 OWNER WHATSAPP : <a class="btn" href="https://wa.me/6285135311112"> 6285135311112/ YUMEIRO</a><br>
 
-## Saluran WhatsApp
+## [] Saluran WhatsApp []
 https://whatsapp.com/channel/0029VbB12efFnSzAuG7u1O1W
 
-## Group WhatsApp
+## [] Group WhatsApp []
 https://chat.whatsapp.com/LHhxJMygG8hCyk968u3tuU?mode=wwt
 
-## GMAIL
+## [] GMAIL []
 
 ```
 • kagurairyosuke@gmail.com
