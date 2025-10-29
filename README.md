@@ -37,10 +37,11 @@ MAU BANTU MENGEMBANGKAN PROJEK INI ?
 
 CONTACTS !!!
 
-OWNER WHATSAPP : <a href="//wa.me/6285135311112"> 6285135311112/ YUMEIRO</a>
-GMAIL : <a href="mailto:kagurairyosuke@gmail.com">kagurairyosuke@gmail.com</a>
-        <a href="mailto:yumeiro@mirai.re">yumeiro@mirai.re</a>
-        <a href="mailto:yumeiro.dev@via.tokyo.jp">yumeiro.dev@via.tokyo.jp</a>
-        <a href="mailto:yumeiroryosuke@svk.jp">yumeiroryosuke@svk.jp</a>
+OWNER WHATSAPP : <a href="//wa.me/6285135311112"> 6285135311112/ YUMEIRO</a><br>
+
+GMAIL : <a href="mailto:kagurairyosuke@gmail.com">kagurairyosuke@gmail.com</a> <br>
+        <a href="mailto:yumeiro@mirai.re">yumeiro@mirai.re</a><br>
+        <a href="mailto:yumeiro.dev@via.tokyo.jp">yumeiro.dev@via.tokyo.jp</a><br>
+        <a href="mailto:yumeiroryosuke@svk.jp">yumeiroryosuke@svk.jp</a><br>
         
 GITHUB : https://github.com/cdn-lib/
