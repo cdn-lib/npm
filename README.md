@@ -10,7 +10,12 @@
 
 NOTE !!!
 
-## PASTE CODE DI BAWAH SEBELUM </body>
+## PASTE CODE DI BAWAH SEBELUM 
+```html 
+</body>
+```
+<hr>
+
 code : 
 ```html 
 <ikan class="ikan"></ikan>
