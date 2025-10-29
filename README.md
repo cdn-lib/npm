@@ -35,17 +35,17 @@ NOTE !!!
 ## =================================== ##
 
 • Lineart Theme
-
+```
 <script src="https://cdn.jsdelivr.net/gh/cdn-lib/npm@3.0/theme/lineart.js" data="b"></script>
-
+```
 • Bootstap Theme
-
+```
 <script src="https://cdn.jsdelivr.net/gh/cdn-lib/npm@3.0/theme.js" data="bootstap"></script>
-
+```
 • Tainwild Theme
-
+```
 <script src="https://cdn.jsdelivr.net/gh/cdn-lib/npm@3.0/theme.js" data="tainwild"></script>
-
+```
 ( Letakan sebelum <body> atau sebelum </body> )
 
 
